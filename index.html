@@ -1,62 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cronograma Cemep</title>
+    <title>Cronograma Escolar</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background-color: #f4f4f9;
         }
-        .timeline {
-            position: relative;
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
+
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            color: #2c3e50;
+            margin: 20px 0;
         }
-        .timeline-event {
+
+        .timeline-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
             background-color: white;
-            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow-y: auto;
+            height: 80vh;
+        }
+
+        .timeline-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .timeline-container::-webkit-scrollbar-thumb {
+            background: #2980b9;
+            border-radius: 10px;
+        }
+
+        .timeline-container::-webkit-scrollbar-track {
+            background: #ecf0f1;
+        }
+
+        .timeline-event {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20px;
             padding: 10px;
-            margin: 10px 0;
-            position: relative;
+            border-radius: 10px;
+            background-color: #eaf2f8;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
         }
-        .timeline-event::before {
-            content: '';
-            position: absolute;
-            left: -10px;
-            top: 15px;
-            width: 10px;
-            height: 10px;
-            background-color: #3498db;
-            border-radius: 50%;
+
+        .timeline-event .date {
+            flex-basis: 20%;
+            text-align: center;
+            font-weight: bold;
+            color: #2980b9;
         }
-        .header-sim {
-            Background-color: #fsg;
+
+        .timeline-event .description {
+            flex-basis: 80%;
+            padding-left: 20px;
+            font-size: 1.2em;
+            color: #34495e;
+        }
+
+        @media screen and (max-width: 768px) {
+            .timeline-event {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .timeline-event .description {
+                padding-left: 0;
+            }
         }
     </style>
 </head>
 <body>
-        <header class="header-sim"> UHUM </header>
-        <div> CRONOGRAMA </div>
+
+    <h1>Cronograma Escolar</h1>
+    <div class="timeline-container">
         <div class="timeline-event">
-            <h3>Event Title 1</h3>
-            <p>Date: January 1, 2023</p>
-            <p>Description of the event goes here.</p>
+            <div class="date">01/02/2024</div>
+            <div class="description">Início das Aulas</div>
         </div>
         <div class="timeline-event">
-            <h3>Event Title 2</h3>
-            <p>Date: February 1, 2023</p>
-            <p>Description of the event goes here.</p>
+            <div class="date">14/02/2024</div>
+            <div class="description">Reunião de Pais</div>
         </div>
         <div class="timeline-event">
-            <h3>Event Title 3</h3>
-            <p>Date: March 1, 2023</p>
-            <p>Description of the event goes here.</p>
+            <div class="date">28/02/2024</div>
+            <div class="description">Feira de Ciências</div>
         </div>
+        <!-- Repita o bloco abaixo para os próximos eventos -->
+        <div class="timeline-event">
+            <div class="date">05/03/2024</div>
+            <div class="description">Prova Bimestral de Matemática</div>
+        </div>
+        <div class="timeline-event">
+            <div class="date">10/03/2024</div>
+            <div class="description">Passeio Escolar ao Museu</div>
+        </div>
+        <!-- Mais eventos... -->
+        <div class="timeline-event">
+            <div class="date">20/12/2024</div>
+            <div class="description">Encerramento do Ano Letivo</div>
+        </div>
+        <!-- Coloque mais 30 eventos como acima -->
+    </div>
 
 </body>
 </html>
