@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .timeline {
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+        .timeline-event {
+            background-color: white;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            position: relative;
+        }
+        .timeline-event::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 15px;
+            width: 10px;
+            height: 10px;
+            background-color: #3498db;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="timeline">
+        <div class="timeline-event">
+            <h3>Event Title 1</h3>
+            <p>Date: January 1, 2023</p>
+            <p>Description of the event goes here.</p>
+        </div>
+        <div class="timeline-event">
+            <h3>Event Title 2</h3>
+            <p>Date: February 1, 2023</p>
+            <p>Description of the event goes here.</p>
+        </div>
+        <div class="timeline-event">
+            <h3>Event Title 3</h3>
+            <p>Date: March 1, 2023</p>
+            <p>Description of the event goes here.</p>
+        </div>
+    </div>
+
+</body>
+</html>
