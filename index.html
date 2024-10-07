@@ -30,99 +30,92 @@
             height: 80vh;
         }
 
-        .timeline-container::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .timeline-container::-webkit-scrollbar-thumb {
-            background: #2980b9;
-            border-radius: 10px;
-        }
-
-        .timeline-container::-webkit-scrollbar-track {
-            background: #ecf0f1;
-        }
-
         .timeline-event {
-            display: flex;
-            flex-direction: row;
             margin-bottom: 20px;
             padding: 10px;
             border-radius: 10px;
             background-color: #eaf2f8;
             box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
 
-        .timeline-event .date {
-            flex-basis: 20%;
-            text-align: center;
+        .date {
             font-weight: bold;
             color: #2980b9;
+            font-size: 1.5em;
+            text-align: center;
+            margin-bottom: 10px;
         }
 
-        .timeline-event .description {
-            flex-basis: 80%;
-            padding-left: 20px;
+        .description {
+            cursor: pointer;
             font-size: 1.2em;
             color: #34495e;
         }
 
-        @media screen and (max-width: 768px) {
-            .timeline-event {
-                flex-direction: column;
-                text-align: center;
-            }
+        .content-box {
+            display: none;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #d1ecf1;
+            border-left: 4px solid #2980b9;
+            border-radius: 5px;
+        }
 
-            .timeline-event .description {
-                padding-left: 0;
-            }
+        .active + .content-box {
+            display: block;
         }
     </style>
 </head>
 <body>
 
-    <h1>CRONOGRAMA CEMEP</h1>
+    <h1>Cronograma Escolar</h1>
     <div class="timeline-container">
+
+        <!-- Evento de várias provas no mesmo dia -->
         <div class="timeline-event">
-            <div class="date">01/02/2024</div>
-            <div class="description">Início das Aulas</div>
+            <div class="date">15/03/2024</div>
+            <div class="description toggle-content">Prova Física</div>
+            <div class="content-box">
+                <strong>Prova de Física</strong>
+                <ul>
+                    <li>Leis de Newton</li>
+                    <li>Cinemática</li>
+                </ul>
+                <p>Capítulos 1 a 4 do livro de Física.</p>
+            </div>
+       <div class="description toggle-content">Prova Química</div>
+            <div class="content-box">
+                <strong>Prova de Química</strong>
+                <ul>
+                    <li>Ligações Químicas</li>
+                    <li>Tabela Periódica</li>
+                </ul>
+                <p>Capítulos 5 e 6 do livro de Química.</p>
+            </div>
         </div>
+
+        <!-- Outro evento exemplo -->
         <div class="timeline-event">
-            <div class="date">14/02/2024</div>
-            <div class="description">Reunião de Pais</div>
+            <div class="date">20/03/2024</div>
+            <div class="description toggle-content">Provas do dia 20/03/2024</div>
+            <div class="content-box">
+                <strong>Prova de Matemática</strong>
+                <ul>
+                    <li>Geometria</li>
+                    <li>Álgebra</li>
+                </ul>
+                <p>Capítulos 2 e 3 do livro de Matemática.</p>
+
+                <strong>Prova de História</strong>
+                <ul>
+                    <li>Revolução Francesa</li>
+                    <li>Independência do Brasil</li>
+                </ul>
+                <p>Capítulo 7 e 8 do livro de História.</p>
+            </div>
         </div>
-        <div class="timeline-event">
-            <div class="date">28/02/2024</div>
-            <div class="description">Prova de Filosofia</div>
-        </div>
-        <!-- Repita o bloco abaixo para os próximos eventos -->
-        <div class="timeline-event">
-            <div class="date">05/03/2024</div>
-            <div class="description">Prova Bimestral de Matemática</div>
-        </div>
-        <div class="timeline-event">
-            <div class="date">10/03/2024</div>
-            <div class="description">Passeio Escolar ao Museu</div>
-        </div>
-        <!-- Mais eventos... -->
-        <div class="timeline-event">
-            <div class="date">20/12/2024</div>
-            <div class="description">Encerramento do Ano Letivo</div>
-        </div>
-        <div class="timeline-event">
-            <div class="date">05/03/2024</div>
-            <div class="description">Prova Bimestral de Matemática</div>
-        </div>
-        <div class="timeline-event">
-            <div class="date">10/03/2024</div>
-            <div class="description">Passeio Escolar ao Museu</div>
-        </div>
-        <!-- Mais eventos... -->
-        <div class="timeline-event">
-            <div class="date">20/12/2024</div>
-            <div class="description">Encerramento do Ano Letivo</div>
-        </div>
-        <div class="timeline-event">
+       <div class="timeline-event">
             <div class="date">05/03/2024</div>
             <div class="description">Prova Bimestral de Matemática</div>
         </div>
@@ -137,6 +130,17 @@
         </div>
         <!-- Coloque mais 30 eventos como acima -->
     </div>
+
+    </div>
+
+    <script>
+        // Script para alternar a exibição do conteúdo das provas
+        document.querySelectorAll('.toggle-content').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
 
 </body>
 </html>
